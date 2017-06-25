@@ -1,0 +1,500 @@
+The filled timesheet is attached. Please sign it for me. Thanks.
+
+Regarding the SCD simulations, for volume of 10^-15 cm^3, most runs
+took 1~2 days, but some may take a week to finish. Therefore, the
+running time for 10^-14 may take 20 to 60 days to finish. Also, if in
+the future we want to run cases with no sink, it may take even longer.
+Thus, I think we could stick on the volume of 10^-15. I'll analysis
+the simulations next Monday, when all simulations are completed!
+
+=====
+
+We found another bug. The fraction of clustered SIA grows linearly in log scale plot with PKA energy and it eventually becomes larger than 1.0 (according to the DEMO cpdf file we have 0.06% chance to have PKA energy higher than 200,000 ev, which can produce 431 Frenkel pairs and a 1.0 fcli). When fcli has a value larger than 1.0, the psia becomes -nan and we have a huge SIA cluster produced.
+
+Therefore, I was thinking that we can set up a cutoff of fcli. In the MD paper(Wahyu Setyawan, JNM 2015) the fraction of clustered defects plot ends at energy of E_{PKA}/128= 10^3 with a value of 80%, so probably we can set the maximum value of fcli equals to 0.8. The fraction for vacancy fclv depends only on temperature and cannot be higher than 1.0, so it is safe. Thanks.
+
+=====
+
+I have uploaded my dissertation and please approved it when you have a
+chance. Attached please find my dissertation. Thank you for all the
+help for these three years. It is really happy to have you as my
+adviser. You are the best adviser!
+
+Thanks.
+
+=====
+
+I have implemented the dissociation and the time-dependent
+transmutation rates. I tested it and found the dissociation happens
+pretty often for small clusters with only a few SIAs (1SIA-xRe).
+Should we set some conditions for this dissociation to occur? Or how
+do you think the 0.8 eV? In our KMC paper the binding energy for AA-B
+and AB-B are 0.52 and 0.53, but if there are more SIAs or REs the
+binding energy should be higher. So probably the dissociation energy
+should be determined by number of SIAs and REs inside the cluster.
+Thanks.
+
+=====
+
+Sure, see you tomorrow!
+
+=====
+
+Please see attachment for the distributions and number density(>1.0
+nm). For the HFIR case, there is only void clusters that have diameter
+larger than 1.0 nm over time, and it only appears at 673k. If you have
+time, we could discuss it tomorrow. Thanks.
+
+=====
+
+Attached I added the number densities of all clusters (except single
+ones) at 673k (and re-plot the figures to make them not floating).
+
+Also, I have a question regarding the strength calculation. So we'll
+use the eq (4) on Hu JNM 2016, right? This is:
+
+d Hv= 3.2 M \alpha \mu b (Nd)^{1/2}
+
+As we discussed before, Nd= sum (diameter)(number density). So now
+\alpha is dependent on the type of the cluster and diameter, I was
+wondering how to calculate it. We have discussed this before while you
+said put \alpha^2 into the sum. So I would like to confirm if it is a
+good idea. Thanks.
+
+=====
+
+In the previous calculations I used the value of volume in cm^3 which
+should be m^3. So the number density for all plots is 10^6 larger. I
+have plotted the new values. Sorry about that.
+
+I calculated the hardening and could be seen also in the attached pdf.
+Since HFIR has visible clusters only at 673k, I plotted HFIR and JOYO
+in the same figure and DEMO in another. The values of HFIR, JOYO seem
+5 to 10 times larger than in the experimental paper, and the hardening
+from voids at low dose only appears at low temperature. How do you
+think about it? Thanks.
+
+=====
+
+Yes, you were right. I found a bug in the property calculation scripts
+which I forgot to set a container to initial every frame. I have
+thoroughly checked the scripts and I guess this time the results
+should be correct. So now the hardness increases are around 1000~2000
+which seems in the same order as experimental data.
+
+By the way, the Vickers hardness is a direct measurement from
+experiments, and the hardness increase we calculate is FKH, right? I
+was thinking how to write the part to the paper/thesis and how to
+present in the final defense. Also, do I need to describe what are
+DEMO, HFIR, and JOYO? Or just say that they are different reactors.
+Thanks.
+
+=====
+
+By the way, what’s the status of the PRB paper?
+
+=====
+
+Thanks for the advise. Here is the status of PRB:
+
+seems like they are still waiting for the reply of the second reviewer.
+
+=====
+
+I found I did something wrong with the diffusivity of mixed-dumbbell.
+I didn't notice that the unit use in the program is [cm] instead of
+[m], so the diffusion coefficient was 10^4 times smaller than it
+should be. I am modifying the code and will rerun it (probably 2 weeks
+for some runs of HFIR and 1 week for others). To re-calculate the
+value, I found the pre-factor of diffusion coefficient of SIA is:
+
+pre-factor = gi * jumpd * jumpd * fi * NU0
+[ gi: geometric factor; jumpd: jump distance; fi: correlation factor;
+NU0: attempt frequency ]
+
+So what do you think the pre-factor of mixed-dumbbell is? I calculated
+it as just NU0 * jumpd *jumpd before without gi and fi (which have
+values of 0.5 and 0.9, probably only for SIAs instead of
+mixed-dumbbells?). Also, I found that NU0 has the same value for SIAs
+and vacancies and is defined in constants.h, which has different
+values in our kMC paper. Thanks.
+
+=====
+
+Got it. Sorry that I didn't notice the unit. I'll start run it. Thanks.
+
+=====
+
+Attached is my postdoc list. Could you please take a look and give me
+some advise if you know the professors? Thanks!
+
+I am now having 18 positions/professors to apply. I will start to
+draft the email and refine my CV tomorrow and will send the emails
+soon! Thanks.
+
+=====
+
+Got it. I'll take a look. I am actually running right now for iter and
+joyo with some temperatures. For joyo, it is now roughly 4e-2 dpa for
+28 hours. So for 14 days we can have 0.5 dpa. Do you think if we
+should shrink the system size a little bit (do we just need to shrink
+from 10^-13 to 10^-14 to speed up for 10 times? does it simpler than
+the dimension reduction method you taught me yesterday?) Also, as I
+quickly review it, they seemly didn't mention the dose rate. Is
+5.8e-08 dpa/s a correct value for it? Thanks.
+
+
+=====
+
+I made the simple html webpage for the simulation packages. Please
+take a look at it and let me know if there are something you would
+like to modify. For the background, I manually put a blue box on the
+top to make the logos more apparent, but it may be wried once the page
+becomes very long. I tried to put multiple backgrounds but it requires
+CSS. Thanks.
+
+For the gif movie, right now I have the attached 2 gif movies. The
+"movie_ ....gif" is the growth process of the precipitate in the KMC
+of W-Re. The "a00_ ....gif" is an KMC simulation on an ABV system
+which tried to reproduce the work of Piotr et al. (Comp. Mat. Sci. 60
+(2012) 59-65). Thanks.
+
+=====
+
+On the webpage of MRS the "Sheraton Grand Phoenix" hotel is $159 per
+night plus tax&fees. How do you think about it? The price for the
+hotel I stayed last year is $85 plus tax&fees. Thanks.
+
+=====
+
+I have cleaned up the code and added a simple makefile. I also wrote a
+kind of detailed README.md file for it. Here is the github repository
+(just to make sure again, it is OK to put them on internet, right?):
+https://github.com/skyhuang1208/kmc_ABVI_surface
+and a tarball is also attached. The .git files are also included with
+all the branches (diffusion, Metropolis_flip_&_swap, void_formation
+and others). Thanks.
+
+=====
+
+I am not sure what you mean by that. Did you want me to add the link
+of wiki page to the README.md file (which will show on the github
+webpage right below the codes)? By the way, in the group webpage the
+wiki page link connects to the same page
+(http://jmarian.bol.ucla.edu/). I have changed the README to this:
+https://github.com/skyhuang1208/kmc_ABVI_surface
+I attached the README file. If you'd like to make some changes, please
+edit the file and send back to me. Thanks!
+
+=====
+
+Got it. I'll try to make one!
+
+=====
+
+I am applying for the scholarship that I applied last year:
+
+2017 CESASC Scholarship.
+
+I was wondering if you could write a recommendation letter for this.
+You probably could just change all 2016 to 2017 on the recommendation
+letter wrote last year and send it. The letter has to send to:
+
+scholarship@cesasc.org
+
+And the CESASC stands for "Chinese-American Engineers and Scientists
+Association of Southern California". Thank you for your help!
+
+=====
+
+Attached please find the new results for KMC simulations. So for 64:
+1, 2, 3, 5 they reached the saturation. The radial solute
+concentration profiles are calculated with the new data. Also for the
+radius as a function of growth time. They are similar results but with
+extended time. The radius at later time even decreases a little, but
+probably due to the averaging of data. I calculated the derivative of
+SRO. The saturation time for this case is roughly at 30s (before) and
+the slope of itl jump contribution indeed decreases a little but not
+much.
+
+The simulations in diffusivity will need several days to complete.
+I'll write the appendix section within the days. Thanks!
+
+=====
+
+Attached are the new results for diffusion simulations. The 450k and
+750k are still running (other than 0.5% CB). The transport
+coefficients looks very weird. I redid the 900k at 1%sol and the
+results is similar.
+
+Also, I read the theory section and left some comments there. So if
+you have time, you could take a look. Thanks.
+
+
+=====
+
+The theory is directly calculated from the random walk equation, i.e.,
+the equation right below eq. 30, which I think you missed the attempt
+frequency nu. For solute diffusion I think I multiple it with the
+ratio of vacancy concentration of (real/simulation), where simulation
+concentration is 1/64^3 and real is exp(-Ef/kBT). I am not sure for
+this and I'll check it later. For the fitting results I am working on
+it but probably will get the results tomorrow.
+
+Happy new year!
+
+=====
+
+The theoretical vacancy diffusion coefficient (or the random walk
+coefficient) is calculated by Dv= b^2 \nu \exp(-Em/k_BT), and other
+fitting values to D= D0 * exp(-Em/k_BT) are:
+                    D0                Em
+theory:          4.845e12      1.623
+CB= 0.5%:    4.5595e13    1.736
+CB= 1.0%     7.4090e13    1.708
+CB= 2.0%     5.1202e14    1.859
+CB= 5.0%     8.5617e15    2.088
+For solute diffusion coefficient, the theoretical value is calculated
+as Ds= b^2 \nu \exp(-Em/k_BT) \exp(-Ef/k_BT). So it is simply the
+theoretical value of Dv times the boltzmann factor of formation energy
+of vacancy. the values are:
+                     D0              Em
+theory:           4.845e12    1.623+3.169= 4.792
+CB= 0.5%:     7.477e12    4.673
+CB= 1.0%:     6.602e12    4.660
+CB= 2.0%:     6.818e12    4.649
+CB= 5.0%:     6.087e12    4.582
+
+I fitted to the equation of log(D)= logD0 - Em /kB/T to avoid overflow
+of exp function, and the theoretical values were used for initial
+guess values. So it looks like the solute diffusion coefficients are
+more accurate (?) then vacancy diffusion coefficients. Thanks.
+
+=====
+
+For diffusivities, I have implemented the restart and now I am
+extending the simulations for longer time. I planned to run for 2 more
+weeks from yesterday but we could stop anytime and start to make
+graphs. The unit of D or D0 is (lattice constant)^2/s. Sorry I should
+have converted them to m^2/s.
+
+Sorry for the appendix. I'll fix it tomorrow.
+
+By the way, will you be available tomorrow at school? We could have a
+meeting for the paper. Thanks!
+
+=====
+
+I found the feature in the ovito. It is "construct surface mesh",
+though I think it is probably not concave hull but other method. I
+attached the movies of the 7 snapshots and I could tune the parameters
+to make a better image later.
+
+While I was making it, I found another very cool plot method. I first
+applied ambient occlusion, which is a technique to draw atoms by
+"calculating how exposed each point in a scene is to ambient
+lighting". And then I applied color coding to the precipitate and we
+could have the precipitate with colors seemly like depend on the
+distance from the CM of the precipitate. The movie is also attached.
+How do you think about it?
+
+=====
+
+Here is the figures and data you want:
+https://www.dropbox.com/sh/md7gvlh8krp3644/AAA6IcCknPuPZ18keAraph_xa?dl=0
+
+So for the surface mesh, I made 2 set with end A and B, which are from
+2 different angles.
+
+The format of the radius data is [time after nucleation]
+[average_radius] [error_bar_radius]. I fitted the radius data from 0s
+to 20s to a*(x+b)^(1.0/3.0) and get [a, b]= [ 4.68399063  0.29478883].
+You could try to fit them with other method. Thanks.
+
+=====
+
+I have put the files in the dropbox folder:
+https://www.dropbox.com/sh/md7gvlh8krp3644/AAA6IcCknPuPZ18keAraph_xa?dl=0
+the coeff_vcc, coeff_sol, and transport are diffusivities and
+transport coefficients.
+
+The rprofAVG* are solute concentration profile data. The numbers are
+the seconds after nucleation. The format is [radial distance from CM]
+[Average solute concentration] [error bar]. The experimental data are
+in format of [radial distance] and solute concentration.
+
+By the way, my abstract on MRS was accepted as poster on April 19.
+I'll confirm to attend it.
+
+=====
+
+I have ran 5 KMC simulations at 1800K on Hoffman and I got the
+precipitate. I plotted the sro evolution of the 5 runs and they are
+the same at beginning. This is because the random seed was given by
+the current time when the simulations started to run and in Hoffman
+they start to run at the same time and got the same random seed. Later
+I restarted the simulations and then they got different seeds so that
+they began to deviate. I should make the random seeds as some
+functions of both current time and some input constant.
+
+I calculated the cluster size as a function of time and confirmed that
+the growth rate at 1800K is as the same as at 2100k.
+
+=====
+
+The new results and figures I made are here:
+https://www.dropbox.com/sh/mk0tlfwhkacpemd/AABM75G-zWLVBeq4S8hww01fa?dl=0
+
+The theoretical values of diffusion coefficients of vacancy and solute
+atoms are in vcoeffTheory and scoeffTheory with the format of
+[temperature] [diffusivity]
+
+The simulation results of diffusivities are in dcoeffp5, dcoeff1,
+dcoeff2, dcoeff5 with solute concentrations CB of 0.5%, 1.0%, 2.0%,
+5.0%, respectively. The format of the files are:
+[temperature] [CB] [Dvcc] [error_Dvcc] [Dsol] [error_Dsol] [Lvs]
+[error_Lvs] [Lss] [error_Lss]
+I plotted them in the figures of diffVCC.png, diffSOL.png, and transport.png
+The fitting results to D0*exp(-Em/kBT) are in the figure of diffusion.png.
+
+The fixed figure of enthalpy of mixing is figure_mixe.eps.
+
+In the figure of sphr14radius_and_recb28times, I plotted the solute
+atoms in a spherical range of radius of 14 around the precipitate at
+early stage (which has a radius <5), and the blue sites where the
+recombination left the solute atoms. There are 28 of the record and
+you can see only 3 of them are outside the range of 14. Probably I can
+make a statistical diagram of it after it runs for a while.
+
+Thanks.
+
+=====
+
+I added on more figure in the dropbox folder:
+https://www.dropbox.com/sh/mk0tlfwhkacpemd/AABM75G-zWLVBeq4S8hww01fa?dl=0
+"figure_sro.eps"
+I changed the region to -0.15 to 0.05 since in the paper we only show
+SRO once and therefore no need to make the range to cover all SRO
+values. I'll make all the phase diagrams tomorrow and then all the
+figures would be done except for the supplementary section.
+
+
+I changed the fitting results in the result section.
+
+And for the final defense, Professor Daniel Neuhauser (my former
+adviser) said he will be away from end of March and can only have a
+Skype meeting in early June. Therefore, we'll probably need  a new
+outside-department committee member. Thanks.
+
+=====
+
+Sorry that I might not explain well. So I meant I changed the yrange
+of the figure from [-0.16: 0.25] to [-0.15:0.05] (if you see the
+figure 4 in the paper). Before I used the large yrange because I
+thought we'll show all SRO figures with different vacancy
+concentrations. Now we show only one SRO figure and phase diagram for
+others so that I used a smaller yrange to make the figure larger. And
+yes before we found that the SRO range for random solid solutions are
+in the range of -0.003 and 0.003 regardless of solute concentration.
+Sorry I forgot the X. The new figure is put in the dropbox folder.
+Thanks!
+
+=====
+
+I have made all the figures and put them in the folder (phase000,
+phaseI10, phaseV01 ~ phaseV50, sro). As we extended the phase diagram
+to 2100k there appears a new transition between 1500 and 1800K for
+0.5% vacancy concentration. Also, I made the .gif animation and put
+them in the figure folder too. Thanks.
+
+=====
+
+I have done reading of the result and discussion sections. I think the
+discussion section is pretty nice but I put some comments on the
+result section. Also, I found some previous comments in the result
+section are not addressed, which we can look them again. So for
+tomorrow I'll attend the career fair in the morning and I plan to
+leave for another career fair at downtown at 2pm or so. So if it is
+possible could we meet at noon or 1pm? I'll make the figures on
+Friday. Thanks.
+
+=====
+
+So usually the big precipitate is the only cluster that has a size
+larger than 20. But occasionally one cluster grows to a large size but
+dissolved very soon. The average size seems increase, but not exceed
+20. Attached please see the cluster size as a function of time and the
+histogram of 0s, 25s, 50s (initial, growing, saturation,
+respectively). If you see the evolution with time, you could see the
+dots with a size larger than 20 are not very dense (also those points
+have only one cluster).
+
+Here are the data at 0s (cluster_size #_of_clusters):
+1 4457
+2 310
+3 38
+4 7
+6 1
+and the data at 50s:
+1 441
+2 56
+3 38
+4 14
+5 13
+6 5
+7 2
+8 7
+9 3
+10 2
+11 2
+12 2
+13 1
+14 1
+4216 1
+
+So the thing I want to tell you is that:
+1. the precipitation of small clusters is not very significant.
+Usually only one clusters for larger size.
+2. the numbers of single solute atom or dimer are very large, which
+force me to use log scale. So if we plot the figure with log scale in
+y-axis, do you think it is not so intuitive? Thanks.
+
+=====
+
+I found something I didn't expect before. I made the movies of the KMC
+simulations with no defect sink and eventually it becomes fully
+precipitation, i.e., all the solute atoms go into the precipitate. It
+should be the reason causing saturation and probably other phenomena
+we observed. Sorry that I made and watched movies in the middle of the
+simulations before and I thought the precipitate never consumes all
+the solute atoms. The movies are in the google drive folder. Please
+take a look at them. Thanks.
+
+=====
+
+I re-calculated the individual cluster sizes by extending to 2nd-nn
+(define cluster as atoms connected in 2nd-nn). Attached please see the
+results. I plotted the histogram of 0s, 2s, 15s, and 45s (beginning,
+before nucleation, growing, and saturation), which gives similar
+results as before. So it seems although solute atoms are fully
+precipitation, but it is very diffuse. However, I guess we have to
+change some discussions about the saturation, since it is due to box
+size limitation? Sorry I didn't see it at the first time.
+
+=====
+
+As I see the movies( which is put in the google drive folder), they all go into the big precipitate, but may be just surrounded. If you see the movies, at the end there is no solute atom outside the big precipitate. So i think all solute atoms go into the big precipitate but the precipitate is very diffusive. They might form some small clusters inside the big ball, like many small clusters in a big community ( as can be seen in histogram, the cluster size indeed increases). Thanks.
+
+=====
+
+Here is the new plot! Thanks.
+
+=====
+
+I put the figures in this dropbox folder. Please take a look:
+https://www.dropbox.com/sh/io6pqmas2m5dob9/AABJk8pKu9FRvilLyLcrCKGsa?dl=0
+Please see if they are OK.
+
+I'll make the snapshots later.
+
+=====

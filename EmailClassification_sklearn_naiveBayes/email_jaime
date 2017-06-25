@@ -1,0 +1,164 @@
+signed
+
+=====
+
+Sounds good Sky, thanks.
+
+=====
+
+I just approved it online, once everyone else in the committee approves it, you can really say you are a UCLA PhD, congratulations!
+
+Don’t worry, we will celebrate this or next week. I have a trip to DC Tuesday and Wednesday of this coming week, so with the teaching and all that, it might be tough, but I want to get everyone over to my house to celebrate your graduation. Maybe this weekend.
+
+Now let’s finish the SCD paper so that you can move on to the next stage of your career with a solid pub record.
+
+=====
+
+ok, perhaps you should do a little study like you had done for the Re/V clusters, but -if not- let’s just use 0.8 eV and see what happens.
+
+Also, I want to talk about something related to damage[0] tomorrow. Can you meet in the early afternoon?
+
+=====
+
+this looks pretty good. Let’s discuss tomorrow morning.
+
+=====
+
+Yes, transfer alpha to the inside of the square root as alpha squared.
+
+Also, note that HV is the hardness, not the strength.
+
+=====
+
+are you at UCLA now?
+
+=====
+
+This is much better Sky.
+
+You should read the paper by Xunxiang carefully to make sure you know the definitions of hardness and strength. My understanding is that they calculate the hardness and strength expected from the number densities of defects that they have, but they also directly measure them. They have a couple of graphs showing the correlation between measured and calculated.
+
+You should probably have a paragraph describing what HFOR, JOYO, and DEMO are. For sure, you should plot the neutron spectra of all three of them in the same graph. For the defense, the important thing is to say that DEMO is a fusion reactor concept (not built), JOYO is a fast neutron reactor located in Japan, and HFIR is a thermal reactor located at Oak Ridge National Lab in Tennessee.
+
+=====
+
+I thought we already figured this out for the PRB paper.
+
+The geometric factor is always 1/z where z is the number of possible equivalent jumps. For 1nn jumps z=8, for 2nn jumps z=6 and for one-dimensional SIA jumps z=2. So in the case of the mixed W-Re dumbbell, gi=1/6. The fi is probably equal to one, since there is no known correlation for mixed dumbbell jumps. The attempt frequency, we have no idea what it is, so using the Debye frequency is always a reasonable approximation.
+
+Please mind the units, no problem about rerunning, you have plenty of work writing the manuscript.
+
+=====
+
+The list is good. If you contact Linda Petzold, tell her that you are working on stochastic cluster dynamics (which the same thing as Gillespie reaction kinetics, which is the name she would use)
+
+=====
+
+this is the paper that I showed you yesterday with the experimental results. Please try to replicate the conditions for the JOYO results with the ‘cpdf.dat' file that I sent you.
+
+=====
+
+Thanks Sky. Let me take a look and I will let you know.
+
+=====
+
+You can stay at the Sheraton
+
+=====
+
+Thanks Sky.
+
+So now please do me a favor, can you link the GitHub repository to the Marian group wiki page that is on my group’s webpage?
+
+=====
+
+Yeah, can you create a simple webpage that I can link to the wiki link that lists codes from the Marian group, etc? Try to make a simple interface that I can use as a template for the wiki page.
+
+=====
+
+Just did
+
+=====
+
+Thanks Sky. I will write this into the paper and I will ask you for more details and final plots once the text is done (i’m in the “Results” section right now).
+
+=====
+
+Thanks Sky. For the diffusion coefficients, can you fit Arrhenisu expressions to all the curves and extract migration energies and diffusion prefactors?
+
+Also, please remind me what you mean by “theory” coefficient.
+
+=====
+
+Thanks Sky. Couple of things:
+
+- What units are the D0? they look too high.
+- Can you please fix the appendix?, it gives a lot of latex errors.
+- Do you have (more) final graphs for the diffusivities?
+
+=====
+
+I can convert it to m2/s.
+
+Let¹s meet today at 11:30a to talk about the paper
+
+=====
+
+Thanks Sky. I like the first movie better, except that I think you should smoothen the edges to make it more visually appealing.
+
+Coloring the atoms in terms of their distance to the precipitate center is not so interesting to me.
+
+=====
+
+Perfect, then we can say that precipitation happens above 1800K
+
+=====
+
+Hey Sky,
+
+I don’t know what you mean here. I thought the idea was to put a dashed line at the value of SRO where random (natural) concentration fluctuations can give you a positive SRO without really having precipitation. That value changes for each concentration so it might be better not to show it at all.
+Also, can you replace ‘x’ with ‘X’ in the figure?
+
+Sounds good.
+
+Thanks
+
+Actually, we need to check with Lili but I don’t think that you need an outside-department committee member anymore. We can have all three of them from MSE now I think.
+
+=====
+
+Can we meet briefly?
+
+=====
+
+Thanks Sky. I have a lunch with a committee at the Dean's office tomorrow from 12-1pm. So if you don’t have any more availability I’ll just go through the comments on my own and if I have any questions we can discuss them on Friday.
+
+=====
+
+this is a good result. I am even thinking about including it in the main paper. There is a very clear time effect on the cluster size histogram. Convert the numbers to concentrations and put the y-axis in logarithmic scale.
+Then we decide what to do with it. In fact, you could also make a gif movie with several histograms to show the time evolution.
+
+=====
+
+You mean that all solute atoms are in clusters, but not necessarily in the big cluster, correct?
+
+=====
+
+can you redo the following graph using [nm] as units of the x-axis?
+
+
+
+
+Can you please email it to me today (as soon as you can)?
+
+Thanks
+
+=====
+
+Three phase diagrams showing SRO with temperature and concentration for three different vacancy concentrations.
+Plot of the SRO as a function of time showing vacancy and interstitial contributions
+Radius of the precipitate as a function of time (preferably with error bars)
+Radial concentration profile of the precipitate (preferably with error bars)
+Five snapshots of the precipitate’s atomistic structure (only Re atoms), preferably showing a cut through the middle to show the internal configuration
+
+=====
